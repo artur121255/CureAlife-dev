@@ -67,17 +67,23 @@ class OnBoarding14State extends State<Starter> {
         ),
         Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
                 onTap: () => _goToNextPage(),
                 child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(),
-                  child: Text('Next'),
+                  padding: EdgeInsets.all(20),
+
+                  // alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.orangeAccent)
+                  ),
+                  child: Text('next'),
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 20,
                 child: SmoothPageIndicator(
                   controller: _controller,
                   count: 7,

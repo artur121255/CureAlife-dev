@@ -6,6 +6,7 @@ import '../utils/goals.dart';
 import './OnBoarding8.dart';
 
 class OnBoarding7 extends StatefulWidget {
+
   @override
   State<OnBoarding7> createState() => OnBoarding7State();
 }
@@ -15,8 +16,9 @@ class OnBoarding7State extends State<OnBoarding7>
   var selectedGoals =  [];
 
   void ContainerClicked(Goals selectedGoal) {
-    color: Colors.orange;
+    color: Colors.orangeAccent;
     print("Click event on Container");
+    print(selectedGoals);
 
     setState(() {
       if (selectedGoals.contains( selectedGoal)){

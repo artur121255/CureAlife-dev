@@ -1,11 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
+import '../utils/risks.dart';
 
-class OnBoarding8 extends StatelessWidget {
-
+class OnBoarding8 extends StatefulWidget {
   const OnBoarding8({Key? key}) : super(key: key);
 
+  @override
+  State<OnBoarding8> createState() => _OnBoarding8State();
+}
 
+class _OnBoarding8State extends State<OnBoarding8>
+    with TickerProviderStateMixin {
+  var selectedRisks = [];
+
+  void ContainerClicked(Risks selectedRisk) {
+    color:
+    Colors.orangeAccent;
+    print("Click event on Container");
+    print(selectedRisks);
+
+    setState(() {
+      if (selectedRisks.contains(selectedRisk)) {
+        selectedRisks.remove(selectedRisk);
+      } else {
+        selectedRisks.add(selectedRisk);
+      }
+    });
+  }
+
+  changeColorForRisk(Risks selectedRisk) {
+    if (selectedRisks.contains(selectedRisk)) {
+      return Colors.orangeAccent;
+    } else {
+      return Colors.white;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +59,9 @@ class OnBoarding8 extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: ()=>null,
+                onTap: () => ContainerClicked(Risks.Type2Diabetes),
                 child: Container(
+
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,7 +73,7 @@ class OnBoarding8 extends StatelessWidget {
                             height: 60,
                             width: 335,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: changeColorForRisk(Risks.Type2Diabetes),
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.grey,
@@ -58,7 +88,7 @@ class OnBoarding8 extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: ()=>null,
+                          onTap: () => ContainerClicked(Risks.HighCholesterol),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Container(
@@ -66,7 +96,7 @@ class OnBoarding8 extends StatelessWidget {
                               height: 60,
                               width: 335,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: changeColorForRisk(Risks.HighCholesterol),
                                 boxShadow: [
                                   BoxShadow(
                                       color: Colors.grey,
@@ -77,71 +107,83 @@ class OnBoarding8 extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
-                                  textAlign: TextAlign.center, 'High Cholesterol '),
+                                  textAlign: TextAlign.center,
+                                  'High Cholesterol '),
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            height: 60,
-                            width: 335,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(20),
+                        InkWell(
+                          onTap: () =>
+                              ContainerClicked(Risks.HighBloodPressure),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              height: 60,
+                              width: 335,
+                              decoration: BoxDecoration(
+                                color: changeColorForRisk(Risks.HighBloodPressure),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                  textAlign: TextAlign.center,
+                                  'High Blood Pressure'),
                             ),
-                            child: Text(
-                                textAlign: TextAlign.center,
-                                'High Blood Pressure'),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            height: 60,
-                            width: 335,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(20),
+                        InkWell(
+                          onTap: () => ContainerClicked(Risks.HeartDisease),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              height: 60,
+                              width: 335,
+                              decoration: BoxDecoration(
+                                color: changeColorForRisk(Risks.HeartDisease),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                  textAlign: TextAlign.center, 'Heart Disease'),
                             ),
-                            child: Text(
-                                textAlign: TextAlign.center, 'Heart Disease'),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            height: 60,
-                            width: 335,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(20),
+                        InkWell(
+                          onTap: () => ContainerClicked(Risks.Asthma),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              height: 60,
+                              width: 335,
+                              decoration: BoxDecoration(
+                                color: changeColorForRisk(Risks.Asthma),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child:
+                                  Text(textAlign: TextAlign.center, 'Asthma'),
                             ),
-                            child: Text(textAlign: TextAlign.center, 'Asthma'),
                           ),
                         ),
                       ],

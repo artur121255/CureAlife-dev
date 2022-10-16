@@ -1,0 +1,4 @@
+enum diagnosed{
+  yes,
+  no
+}

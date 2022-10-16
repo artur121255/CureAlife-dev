@@ -21,7 +21,6 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         // decoration: BoxDecoration(
         // gradient: LinearGradient(colors: [
@@ -36,11 +35,22 @@ class _SignInScreenState extends State<SignInScreen> {
                 20, MediaQuery.of(context).size.height * 0.2, 20, 0),
             child: Column(
               children: <Widget>[
-                logoWidget("assets/signin/loginlogo.png"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height:200,
+                      child: Image.asset(
+                        'assets/smallTree.png',
+                        fit: BoxFit.contain,
+                      ),
+                    )
+                  ],
+                ),
                 const SizedBox(
                   height: 30,
                 ),
-                reusableTextField( "Enter UserName", Icons.person_outline, false,
+                reusableTextField("Enter UserName", Icons.person_outline, false,
                     _emailTextController),
                 const SizedBox(
                   height: 20,

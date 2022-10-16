@@ -22,45 +22,69 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
+          width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  Container(
-                      height: 150,
-                      width: double.infinity,
-                      child: Image.asset(
-                        'assets/smallTree.png',
-                        fit: BoxFit.contain,
-                      )),
-                ],
-              ),
               Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                // width: double.infinity,
-                //   height: 300,
-                //   decoration: BoxDecoration(
-                //       gradient: LinearGradient(colors: [
-                //     Colors.white,
-                //     Colors.grey,
-                //   ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+                  // width: double.infinity,
+                  //   height: 300,
+                  //   decoration: BoxDecoration(
+                  //       gradient: LinearGradient(colors: [
+                  //     Colors.white,
+                  //     Colors.grey,
+                  //   ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
                   child: SingleChildScrollView(
                       child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
                     child: Column(
                       children: <Widget>[
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Text('hello...'),
+                                  Text(
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25),
+                                      'Register'),
+                                ],
+                              ),
+                              Container(
+                                height: 300,
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                        child: Container(
+                                      child: Image.asset(
+                                        'assets/smallTree.png',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ))
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
-                        reusableTextField("Enter UserName", Icons.person_outline,
-                            false, _userNameTextController),
+                        reusableTextField(
+                            "Enter UserName",
+                            Icons.person_outline,
+                            false,
+                            _userNameTextController),
                         const SizedBox(
                           height: 20,
                         ),
-                        reusableTextField("Enter Email Id", Icons.person_outline,
-                            false, _emailTextController),
+                        reusableTextField("Enter Email Id",
+                            Icons.person_outline, false, _emailTextController),
                         const SizedBox(
                           height: 20,
                         ),
@@ -76,8 +100,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   password: _passwordTextController.text)
                               .then((value) {
                             print("Created New Account");
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Starter()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Starter()));
                           }).onError((error, stackTrace) {
                             print("Error ${error.toString()}");
                           });
