@@ -24,17 +24,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-              height: 300,
+              height: 100,
               width: double.infinity,
               child: Image.asset(
                 'assets/smallTree.png',
                 fit: BoxFit.cover,
               )),
           Container(
-              // width: MediaQuery.of(context).size.width,
-              // height: MediaQuery.of(context).size.height,
-            width: double.infinity,
-              height: 300,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+            // width: double.infinity,
+            //   height: 300,
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Colors.white,
