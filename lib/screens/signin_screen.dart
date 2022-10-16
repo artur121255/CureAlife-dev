@@ -23,11 +23,11 @@ class _SignInScreenState extends State<SignInScreen> {
     return Scaffold(
 
       body: Container(
-        decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [
-        Colors.white,
-        Colors.grey
-        ])),
+        // decoration: BoxDecoration(
+        // gradient: LinearGradient(colors: [
+        // Colors.white,
+        // Colors.grey
+        // ])),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
@@ -104,7 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
           textAlign: TextAlign.right,
         ),
         onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Starter())),
+            context, MaterialPageRoute(builder: (context) => ResetPassword())),
       ),
     );
   }

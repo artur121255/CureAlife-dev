@@ -20,66 +20,74 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-              height: 100,
-              width: double.infinity,
-              child: Image.asset(
-                'assets/smallTree.png',
-                fit: BoxFit.cover,
-              )),
-          Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-            // width: double.infinity,
-            //   height: 300,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                Colors.white,
-                Colors.grey,
-              ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-              child: SingleChildScrollView(
-                  child: Padding(
-                padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
-                child: Column(
-                  children: <Widget>[
-                    const SizedBox(
-                      height: 20,
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
+                children: [
+                  Container(
+                      height: 150,
+                      width: double.infinity,
+                      child: Image.asset(
+                        'assets/smallTree.png',
+                        fit: BoxFit.contain,
+                      )),
+                ],
+              ),
+              Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                // width: double.infinity,
+                //   height: 300,
+                //   decoration: BoxDecoration(
+                //       gradient: LinearGradient(colors: [
+                //     Colors.white,
+                //     Colors.grey,
+                //   ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+                  child: SingleChildScrollView(
+                      child: Padding(
+                    padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
+                    child: Column(
+                      children: <Widget>[
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        reusableTextField("Enter UserName", Icons.person_outline,
+                            false, _userNameTextController),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        reusableTextField("Enter Email Id", Icons.person_outline,
+                            false, _emailTextController),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        reusableTextField("Enter Password", Icons.lock_outlined,
+                            true, _passwordTextController),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        firebaseUIButton(context, "Sign Up", () {
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: _emailTextController.text,
+                                  password: _passwordTextController.text)
+                              .then((value) {
+                            print("Created New Account");
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Starter()));
+                          }).onError((error, stackTrace) {
+                            print("Error ${error.toString()}");
+                          });
+                        })
+                      ],
                     ),
-                    reusableTextField("Enter UserName", Icons.person_outline,
-                        false, _userNameTextController),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    reusableTextField("Enter Email Id", Icons.person_outline,
-                        false, _emailTextController),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    reusableTextField("Enter Password", Icons.lock_outlined,
-                        true, _passwordTextController),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    firebaseUIButton(context, "Sign Up", () {
-                      FirebaseAuth.instance
-                          .createUserWithEmailAndPassword(
-                              email: _emailTextController.text,
-                              password: _passwordTextController.text)
-                          .then((value) {
-                        print("Created New Account");
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Starter()));
-                      }).onError((error, stackTrace) {
-                        print("Error ${error.toString()}");
-                      });
-                    })
-                  ],
-                ),
-              ))),
-        ],
+                  ))),
+            ],
+          ),
+        ),
       ),
     );
   }

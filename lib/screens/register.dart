@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:medicalinfo2/screens/signup_screen.dart';
+import 'package:medicalinfo2/utils/color_utils.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Register extends StatelessWidget {
           width: double.infinity,
           child: Image.asset('assets/RegisterTree.png', fit: BoxFit.cover,)),
     ),
-            SizedBox(height: 70),
+            SizedBox(height: 30),
     InkWell(
     onTap: () => Navigator.of(context).push(
     MaterialPageRoute(
@@ -30,14 +30,13 @@ class Register extends StatelessWidget {
     height: 50,
     alignment: Alignment.center,
     decoration: BoxDecoration(
-      color: Colors.orange,
+      color: Colors.orangeAccent,
       borderRadius: BorderRadius.circular(20),
 
     ),
     child: Text(style: TextStyle(color: Colors.white),'register'),
     ),
     )
-    ,
     ]
     ,
     )
