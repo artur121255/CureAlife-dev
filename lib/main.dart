@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/OnBoarding10.dart';
@@ -6,11 +7,21 @@ import 'package:medicalinfo2/pages/OnBoarding12.dart';
 import 'package:medicalinfo2/pages/OnBoarding13.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
-import './pages/starter.dart';
-import './pages/starter.dart';
+import 'package:medicalinfo2/screens/register.dart';
+import 'package:medicalinfo2/screens/signin_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import './pages/Sarter.dart';
+import './pages/Sarter.dart';
+var initScreen;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  initScreen = await preferences.getInt('initScreen');
+  await preferences.setInt('initScreen', 1);
+  await Firebase.initializeApp();
   runApp(MyApp());
+  
 }
 
 class MyApp extends StatefulWidget {
@@ -30,11 +41,13 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  Starter(),
-    // routes: {
-    //  '/onboarding8':(context)=>onBoarding8(),
-    //
-    // },
+      initialRoute:  initScreen==0||initScreen==null? 'register' :'register',
+      routes: {
+        'signIn' :(context) => SignInScreen(),
+        'onBoarding': (context) => Starter(),
+        'register' : (context)=> Register(),
+      },
+
     );
   }
 }

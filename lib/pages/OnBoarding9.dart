@@ -76,20 +76,6 @@ class OnBoarding9 extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 0),
-              child: Container(
-                child: InkWell(
-                  child: Text(
-                    'Next',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black, fontSize: 20),
-                  ),
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => OnBoarding10())),
-                ),
-              ),
-            ),
 
           ],
         ),

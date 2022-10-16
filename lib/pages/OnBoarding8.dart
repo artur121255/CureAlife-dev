@@ -144,23 +144,6 @@ class OnBoarding8 extends StatelessWidget {
                             child: Text(textAlign: TextAlign.center, 'Asthma'),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 100),
-                          child: Container(
-                            child: InkWell(
-                              child: Text(
-                                'Next',
-                                textAlign: TextAlign.center,
-                                style:
-                                    TextStyle(color: Colors.black, fontSize: 20),
-                              ),
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => OnBoarding9())),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
