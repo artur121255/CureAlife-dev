@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:medicalinfo2/screens/signup_screen.dart';
 
 class Register extends StatelessWidget {
@@ -22,7 +23,7 @@ class Register extends StatelessWidget {
     InkWell(
     onTap: () => Navigator.of(context).push(
     MaterialPageRoute(
-    builder: (context) => const SignUpScreen()),
+    builder: (context) => const SignInScreen()),
     ),
     child: Container(
       width: 300,
