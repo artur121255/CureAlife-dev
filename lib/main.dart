@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute:  initScreen==0||initScreen==null? 'onBoarding' :'signIn',
+      initialRoute:  initScreen==0||initScreen==null? 'register' :'register',
       routes: {
         'signIn' :(context) => SignInScreen(),
         'onBoarding': (context) => Starter(),

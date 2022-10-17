@@ -4,7 +4,6 @@ import 'package:medicalinfo2/pages/OnBoarding13.dart';
 import 'package:medicalinfo2/pages/OnBoarding10.dart';
 import 'package:medicalinfo2/pages/OnBoarding11.dart';
 import 'package:medicalinfo2/pages/OnBoarding15.dart';
-import 'package:medicalinfo2/pages/OnBoarding2.dart';
 import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
@@ -34,7 +33,7 @@ class StarterState extends State<Starter> {
     if (currentPage < 8){
       _controller.animateToPage(currentPage+1, duration: const Duration(milliseconds: 250), curve: Curves.easeInOut);
     }
-
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +53,6 @@ class StarterState extends State<Starter> {
           child: PageView(
             controller: _controller,
             children: <Widget>[
-              OnBoarding2(),
               OnBoarding7(),
               const OnBoarding8(),
               const OnBoarding9(),
