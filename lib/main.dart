@@ -10,8 +10,8 @@ import 'package:medicalinfo2/pages/OnBoarding8.dart';
 import 'package:medicalinfo2/screens/register.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import './pages/Sarter.dart';
-import './pages/Sarter.dart';
+import './pages/Starter.dart';
+import './pages/Starter.dart';
 var initScreen;
 
 Future<void> main() async {

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicalinfo2/reusable_widgets/reusable_widget.dart';
-import 'package:medicalinfo2/pages/Sarter.dart';
+import 'package:medicalinfo2/pages/Starter.dart';
 import 'package:medicalinfo2/screens/reset_password.dart';
 import 'package:medicalinfo2/screens/home_screen.dart';
 import 'package:medicalinfo2/screens/signup_screen.dart';

@@ -14,15 +14,16 @@ class Starter extends StatefulWidget {
 
 
   @override
-  State<Starter> createState() => OnBoarding14State();
+  StarterState createState() => StarterState();
 }
 
-class OnBoarding14State extends State<Starter> {
+class StarterState extends State<Starter> {
   final _controller = PageController();
 
   _saveDataForPage(int currentPage){
 
   }
+
 
   _goToNextPage(){
     var currentPage = _controller.page?.floor();
@@ -34,12 +35,10 @@ class OnBoarding14State extends State<Starter> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
-    final PageController controller = PageController();
-    return Scaffold(
+      final PageController controller = PageController();
+      return Scaffold(
         appBar: AppBar(
 
           backgroundColor: Colors.white,
@@ -106,4 +105,4 @@ class OnBoarding14State extends State<Starter> {
       ],
     ));
   }
-}
+}}
