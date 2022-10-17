@@ -173,7 +173,7 @@
         <entry key="http_parser">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib" />
+              <option value="$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2/lib" />
             </list>
           </value>
         </entry>
@@ -432,7 +432,7 @@
       <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.7.3/lib" />
       <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.5/lib" />
-      <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
       <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib" />
       <root url="file://$PROJECT_DIR$/../../development/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.0/lib" />
