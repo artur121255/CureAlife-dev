@@ -37,7 +37,6 @@ class StarterState extends State<Starter> {
 
   @override
   Widget build(BuildContext context) {
-      final PageController controller = PageController();
       return Scaffold(
         appBar: AppBar(
 
@@ -105,4 +104,4 @@ class StarterState extends State<Starter> {
       ],
     ));
   }
-}}
+}
