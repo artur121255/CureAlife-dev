@@ -19,7 +19,9 @@ class _GroceriesState extends State<Groceries> {
 //   centerTitle: true,
 // ),
 
-      body: Column(
+        body: SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           const Align(
@@ -106,482 +108,480 @@ class _GroceriesState extends State<Groceries> {
               )
             ],
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: SizedBox(
-              width: 412.0,
-              height: 610.0,
-              child: ListView(
+          SizedBox(
+            width: 412.0,
+            height: 610.0,
+            child: ListView(
 // padding: const EdgeInsets.all(8),
-                children: <Widget>[
-                  SizedBox(
-                    width: 412.0,
-                    height: 151.0,
-                    child: ListView(
-                      children: <Widget>[
-                        Container(
-                            width: 375.0,
-                            height: 28.0,
-                            color: Colors.deepOrange[300],
-                            child: Row(
+              children: <Widget>[
+                SizedBox(
+                  width: 412.0,
+                  height: 151.0,
+                  child: ListView(
+                    children: <Widget>[
+                      Container(
+                          width: 375.0,
+                          height: 28.0,
+                          color: Colors.deepOrange[300],
+                          child: Row(
+                            children: <Widget>[
+                              Image.asset('assets/dairy.png'),
+                              Text(
+                                'Dairy',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          )),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
                               children: <Widget>[
-                                Image.asset('assets/dairy.png'),
-                                Text(
-                                  'Dairy',
-                                  style: TextStyle(color: Colors.white),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Milk  3 Caps'),
                               ],
-                            )),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Milk  3 Caps'),
-                                ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('cottage   300mg'),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('cottage   300mg'),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('cheese  500mg'),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('cheese  500mg'),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: 412.0,
-                    height: 151.0,
-                    child: ListView(
-                      children: <Widget>[
-                        Container(
-                          width: 375.0,
-                          height: 28.0,
-                          color: Colors.deepOrange[300],
-                          child: Row(
-                            children: <Widget>[
-                              Image.asset('assets/meat.png'),
-                              Text(
-                                'Meat',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
+                ),
+                SizedBox(
+                  width: 412.0,
+                  height: 151.0,
+                  child: ListView(
+                    children: <Widget>[
+                      Container(
+                        width: 375.0,
+                        height: 28.0,
+                        color: Colors.deepOrange[300],
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset('assets/meat.png'),
+                            Text(
+                              'Meat',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Chicken  200gr'),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Chicken  200gr'),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Flank  300gr'),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Flank  300gr'),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Turkey  500gr'),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Turkey  500gr'),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
-                  SizedBox(
-                    width: 412.0,
-                    height: 151.0,
-                    child: ListView(
-                      children: <Widget>[
-                        Container(
-                          width: 375.0,
-                          height: 28.0,
-                          color: Colors.deepOrange[300],
-                          child: Row(
-                            children: <Widget>[
-                              Image.asset('assets/Fruit.png'),
-                              Text(
-                                'Fruit',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
+                ),
+                SizedBox(
+                  width: 412.0,
+                  height: 151.0,
+                  child: ListView(
+                    children: <Widget>[
+                      Container(
+                        width: 375.0,
+                        height: 28.0,
+                        color: Colors.deepOrange[300],
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset('assets/Fruit.png'),
+                            Text(
+                              'Fruit',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Banana '),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Banana '),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Apple '),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Apple '),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Peach '),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Peach '),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: 412.0,
-                    height: 151.0,
-                    child: ListView(
-                      children: <Widget>[
-                        Container(
-                          width: 375.0,
-                          height: 28.0,
-                          color: Colors.deepOrange[300],
-                          child: Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                              ),
-                              Image.asset('assets/vegetables.png'),
-                              Text(
-                                'vegetables',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
+                ),
+                SizedBox(
+                  width: 412.0,
+                  height: 151.0,
+                  child: ListView(
+                    children: <Widget>[
+                      Container(
+                        width: 375.0,
+                        height: 28.0,
+                        color: Colors.deepOrange[300],
+                        child: Row(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                            ),
+                            Image.asset('assets/vegetables.png'),
+                            Text(
+                              'vegetables',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('Tomato '),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('Tomato '),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('cucumber '),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('cucumber '),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: 335.0,
-                          height: 30.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                  ),
-                                  Checkbox(
-                                      value: _value,
-                                      onChanged: (bool? value) {
-                                        setState(() {
-                                          _value = value;
-                                        });
-                                      }),
-                                  Text('lettuce '),
-                                ],
-                              ),
-                              IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.close,
-                                  color: Colors.black,
+                      ),
+                      Container(
+                        width: 335.0,
+                        height: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
                                 ),
+                                Checkbox(
+                                    value: _value,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        _value = value;
+                                      });
+                                    }),
+                                Text('lettuce '),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],
       ),
+    )
 // Container(
 //   // Center is a layout widget. It takes a single child and positions it
 //   // in the middle of the parent.
@@ -600,6 +600,6 @@ class _GroceriesState extends State<Groceries> {
 //   ),
 // ),
 // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        );
   }
 }
