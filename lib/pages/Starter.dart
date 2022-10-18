@@ -34,6 +34,13 @@ class StarterState extends State<Starter> {
       _controller.animateToPage(currentPage+1, duration: const Duration(milliseconds: 250), curve: Curves.easeInOut);
     }
   }
+  Color _getColorForPage( currentPage){
+    if (currentPage.contains( currentPage)){
+      return Colors.orange;
+    } else{
+      return Colors.white;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +55,7 @@ class StarterState extends State<Starter> {
       physics: const AlwaysScrollableScrollPhysics(),
       children: [
         SizedBox(
-          height: 600,
+          height: MediaQuery.of(context).size.height*0.8,
           child: PageView(
             controller: _controller,
             children: <Widget>[
@@ -70,7 +77,10 @@ class StarterState extends State<Starter> {
               InkWell(
                 onTap: () => _goToNextPage(),
                 child: Container(
+                  width: MediaQuery.of(context).size.width*0.4,
+                  height: 30,
                   padding: EdgeInsets.all(20),
+                  alignment: Alignment.center,
 
                   // alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -80,11 +90,12 @@ class StarterState extends State<Starter> {
                   child: Text('next'),
                 ),
               ),
+              SizedBox(height: 10),
               SizedBox(
                 height: 20,
                 child: SmoothPageIndicator(
                   controller: _controller,
-                  count: 7,
+                  count: 9,
                   effect: JumpingDotEffect(
                     activeDotColor: Colors.orange,
                     dotColor: Colors.deepPurple.shade100,

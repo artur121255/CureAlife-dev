@@ -42,21 +42,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Column(
                       children: <Widget>[
                         Container(
+                          height:MediaQuery.of(context).size.height*0.3,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
-                                children: [
-                                  Text('hello...'),
-                                  Text(
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 25),
-                                      'Register'),
-                                ],
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Text('hello...'),
+                                    Text(
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 25),
+                                        'Register'),
+                                  ],
+                                ),
                               ),
                               Container(
-                                height: 300,
+                                height: MediaQuery.of(context).size.height*0.4,
                                 child: Stack(
                                   children: [
                                     Positioned(
