@@ -1,43 +1,40 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../utils/goals.dart';
 import './OnBoarding8.dart';
 
 class OnBoarding7 extends StatefulWidget {
-
   @override
   State<OnBoarding7> createState() => OnBoarding7State();
 }
 
 class OnBoarding7State extends State<OnBoarding7>
     with TickerProviderStateMixin {
-  var selectedGoals =  [];
+  var selectedGoals = [];
 
   void ContainerClicked(Goals selectedGoal) {
-    color: Colors.orangeAccent;
+    color:
+    Colors.orangeAccent;
     print("Click event on Container");
     print("before:");
     print(selectedGoals);
 
     setState(() {
-      if (selectedGoals.contains( selectedGoal)){
+      if (selectedGoals.contains(selectedGoal)) {
         selectedGoals.remove(selectedGoal);
-      } else{
+      } else {
         selectedGoals.add(selectedGoal);
       }
       print("after:");
       print(selectedGoals);
     });
-
   }
 
-  Color _getColorForGoal(Goals selectedGoal){
-    if (selectedGoals.contains( selectedGoal)){
-     return Colors.orange;
-    } else{
-     return Colors.white;
+  Color _getColorForGoal(Goals selectedGoal) {
+    if (selectedGoals.contains(selectedGoal)) {
+      return Colors.orange;
+    } else {
+      return Colors.white;
     }
   }
 
@@ -71,7 +68,7 @@ class OnBoarding7State extends State<OnBoarding7>
                 child: GridView(
                   children: <Widget>[
                     InkWell(
-                      onTap: ()=> ContainerClicked(Goals.beHealthier),
+                      onTap: () => ContainerClicked(Goals.beHealthier),
                       child: Container(
                         height: 20,
                         decoration: BoxDecoration(
@@ -130,11 +127,13 @@ class OnBoarding7State extends State<OnBoarding7>
                       ),
                     ),
                     InkWell(
-                      onTap: ()=> ContainerClicked(Goals.increaseMyEnergyLevels),
+                      onTap: () =>
+                          ContainerClicked(Goals.increaseMyEnergyLevels),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: _getColorForGoal(Goals.increaseMyEnergyLevels),
+                            color:
+                                _getColorForGoal(Goals.increaseMyEnergyLevels),
                             boxShadow: [
                               BoxShadow(
                                   blurRadius: 5.0,
@@ -158,7 +157,7 @@ class OnBoarding7State extends State<OnBoarding7>
                       ),
                     ),
                     InkWell(
-                      onTap: ()=> ContainerClicked(Goals.loseWeight),
+                      onTap: () => ContainerClicked(Goals.loseWeight),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -186,7 +185,7 @@ class OnBoarding7State extends State<OnBoarding7>
                       ),
                     ),
                     InkWell(
-                      onTap: ()=> ContainerClicked(Goals.learnToCook),
+                      onTap: () => ContainerClicked(Goals.learnToCook),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -214,7 +213,7 @@ class OnBoarding7State extends State<OnBoarding7>
                       ),
                     ),
                     InkWell(
-                      onTap: ()=> ContainerClicked(Goals.learnNewRecipes),
+                      onTap: () => ContainerClicked(Goals.learnNewRecipes),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -246,7 +245,8 @@ class OnBoarding7State extends State<OnBoarding7>
                             Text(
                               'Learn new recipes',
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black, fontSize: 20),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
                             )
                           ],
                         ),
@@ -266,24 +266,32 @@ class OnBoarding7State extends State<OnBoarding7>
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+
+        currentIndex: 2,
+          type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.food_bank),
+            label: 'Recipes',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.shopping_cart),
+            label: 'Grocery List',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: 'Education',
+          ),
+
+
         ],
         selectedItemColor: Colors.amber[800],
         onTap: null,
       ),
     );
   }
-  }
-
+}
