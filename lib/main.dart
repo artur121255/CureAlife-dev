@@ -1,5 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:medicalinfo2/pages/OnBoarding2.dart';
+import 'package:medicalinfo2/pages/OnBoarding3.dart';
+import 'package:medicalinfo2/pages/OnBoarding4.dart';
+import 'package:medicalinfo2/pages/OnBoarding5.dart';
+import 'package:medicalinfo2/pages/OnBoarding6.dart';
 import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/OnBoarding10.dart';
 import 'package:medicalinfo2/pages/OnBoarding11.dart';
@@ -12,6 +17,7 @@ import 'package:medicalinfo2/screens/register.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './pages/Starter.dart';
+import './pages/starterOnBoarding2.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart' ;
@@ -49,7 +55,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute:  initScreen==0||initScreen==null? 'OnBoardingStarter' :'register',
       routes: {
         'signIn' :(context) => SignInScreen(),
-        'onBoarding': (context) => Starter(),
+        // 'onBoarding': (context) => StarterOnBoarding(),
         'register' : (context)=> Register(),
         'OnBoardingStarter' :(context) => StarterOnBoarding(),
       },

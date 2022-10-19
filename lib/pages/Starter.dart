@@ -7,7 +7,6 @@ import 'package:medicalinfo2/pages/OnBoarding15.dart';
 import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
-import 'package:medicalinfo2/pages/onBoarding2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Starter extends StatefulWidget {
@@ -71,7 +70,6 @@ class StarterState extends State<Starter> {
               child: PageView(
                 controller: _controller,
                 children: <Widget>[
-                  const OnBoarding2(),
                   OnBoarding7(),
                   const OnBoarding8(),
                   const OnBoarding9(),

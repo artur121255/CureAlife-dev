@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medicalinfo2/pages/starterOnBoarding2.dart';
 import 'package:medicalinfo2/reusable_widgets/reusable_widget.dart';
 import 'package:medicalinfo2/pages/Starter.dart';
 import 'package:medicalinfo2/screens/reset_password.dart';
@@ -68,7 +69,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Starter()));
+                        MaterialPageRoute(builder: (context) => StarterOnBoarding()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
