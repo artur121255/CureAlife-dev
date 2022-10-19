@@ -120,7 +120,7 @@ class _GroceriesState extends State<Groceries> {
                   child: ListView(
                     children: <Widget>[
                       Container(
-                          width: 375.0,
+                          width: double.infinity,
                           height: 28.0,
                           color: Colors.deepOrange[300],
                           child: Row(
