@@ -7,6 +7,7 @@ import 'package:medicalinfo2/pages/OnBoarding15.dart';
 import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
+import 'package:medicalinfo2/pages/onBoarding2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Starter extends StatefulWidget {
@@ -42,6 +43,12 @@ class StarterState extends State<Starter> {
   //     return Colors.white;
   //   }
   // }
+  // changeAppBarColor(currentPage){
+  //   if (currentPage==2){
+  //     return Colors.orange;
+  //   }
+  //
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +62,7 @@ class StarterState extends State<Starter> {
                   'FreshPlate')),
         ),
         body: Column(
+
           // scrollDirection: Axis.vertical,
           // physics: const AlwaysScrollableScrollPhysics(),
           children: [
@@ -63,6 +71,7 @@ class StarterState extends State<Starter> {
               child: PageView(
                 controller: _controller,
                 children: <Widget>[
+                  const OnBoarding2(),
                   OnBoarding7(),
                   const OnBoarding8(),
                   const OnBoarding9(),
@@ -113,27 +122,27 @@ class StarterState extends State<Starter> {
                 ],
               ),
             ),
-            BottomNavigationBar(
-                backgroundColor: Colors.white,
-                type: BottomNavigationBarType.shifting,
-                items: [
-                  BottomNavigationBarItem(
-                      icon:Icon(Icons.home, color: Color.fromARGB(255, 255, 255, 255)
-                          
-                      ),
-
-
-                      backgroundColor: Colors.red),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.work,color: Color.fromARGB(255, 255, 255, 255)),
-                      backgroundColor: Colors.blue),
-                  BottomNavigationBarItem(
-                      icon:Icon(Icons.face, color: Color.fromARGB(255, 255, 255, 255)),
-                      backgroundColor: Colors.amber),
-                ]
-
-
-            )],
-        ));
+            // BottomNavigationBar(
+            //     backgroundColor: Colors.white,
+            //     type: BottomNavigationBarType.shifting,
+            //     items: [
+            //       BottomNavigationBarItem(
+            //           icon:Icon(Icons.home, color: Color.fromARGB(255, 255, 255, 255)
+            //
+            //           ),
+            //
+            //
+            //           backgroundColor: Colors.red),
+            //       BottomNavigationBarItem(
+            //           icon: Icon(Icons.work,color: Color.fromARGB(255, 255, 255, 255)),
+            //           backgroundColor: Colors.blue),
+            //       BottomNavigationBarItem(
+            //           icon:Icon(Icons.face, color: Color.fromARGB(255, 255, 255, 255)),
+            //           backgroundColor: Colors.amber),
+            //     ]
+            //
+            //
+            // )],
+        ]));
   }
 }
