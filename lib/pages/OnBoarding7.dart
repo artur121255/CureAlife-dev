@@ -18,6 +18,7 @@ class OnBoarding7State extends State<OnBoarding7>
   void ContainerClicked(Goals selectedGoal) {
     color: Colors.orangeAccent;
     print("Click event on Container");
+    print("before:");
     print(selectedGoals);
 
     setState(() {
@@ -26,6 +27,8 @@ class OnBoarding7State extends State<OnBoarding7>
       } else{
         selectedGoals.add(selectedGoal);
       }
+      print("after:");
+      print(selectedGoals);
     });
   }
 

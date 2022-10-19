@@ -30,17 +30,17 @@ class StarterState extends State<Starter> {
 
     _saveDataForPage(currentPage!);
 
-    if (currentPage < 8){
+    if (currentPage < 11){
       _controller.animateToPage(currentPage+1, duration: const Duration(milliseconds: 250), curve: Curves.easeInOut);
     }
   }
-  Color _getColorForPage( currentPage){
-    if (currentPage.contains( currentPage)){
-      return Colors.orange;
-    } else{
-      return Colors.white;
-    }
-  }
+  // Color _getColorForPage( currentPage){
+  //   if (){
+  //     return Colors.orange;
+  //   } else{
+  //     return Colors.white;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class StarterState extends State<Starter> {
                 height: 20,
                 child: SmoothPageIndicator(
                   controller: _controller,
-                  count: 9,
+                  count: 12,
                   effect: JumpingDotEffect(
                     activeDotColor: Colors.orange,
                     dotColor: Colors.deepPurple.shade100,
