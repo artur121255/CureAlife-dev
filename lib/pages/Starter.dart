@@ -7,6 +7,7 @@ import 'package:medicalinfo2/pages/OnBoarding15.dart';
 import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
+import 'package:medicalinfo2/screens/home_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Starter extends StatefulWidget {
@@ -29,9 +30,13 @@ class StarterState extends State<Starter> {
 
     _saveDataForPage(currentPage!);
 
-    if (currentPage < 11) {
+    if (currentPage < 5) {
       _controller.animateToPage(currentPage + 1,
           duration: const Duration(milliseconds: 250), curve: Curves.easeInOut);
+    }
+    if (currentPage == 4) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
     }
   }
 
@@ -106,7 +111,7 @@ class StarterState extends State<Starter> {
                       height: 15,
                       child: SmoothPageIndicator(
                         controller: _controller,
-                        count: 6,
+                        count: 5,
                         effect: JumpingDotEffect(
                           activeDotColor: Colors.orange,
                           dotColor: Colors.deepPurple.shade100,
