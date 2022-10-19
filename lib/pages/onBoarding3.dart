@@ -6,7 +6,7 @@ class OnBoarding3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4B643D),
+      backgroundColor: Color(0xffEB9183),
       body: Column(
         children: [
           Container(
@@ -15,12 +15,12 @@ class OnBoarding3 extends StatelessWidget {
           Container(
             alignment: Alignment.center,
 
-            child: Text(style: TextStyle(fontWeight: FontWeight.bold),"Welcome")
+            child: Text(style: TextStyle(fontWeight: FontWeight.bold),"Plan your Plate")
 
           ),
           Container(
             alignment: Alignment.center,
-            child: Text("Explore tons of new recipes right at your fingertips! You’re about to learn new kitchen skills, cook delicious food, and get healthy while doing it! "),
+            child: Text("Pile your plate, the right way! Helpful tips on portion control and food!"),
 
           )
         ],

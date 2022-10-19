@@ -4,7 +4,6 @@ import 'package:medicalinfo2/pages/OnBoarding3.dart';
 import 'package:medicalinfo2/pages/onBoarding4.dart';
 import 'package:medicalinfo2/pages/OnBoarding5.dart';
 import 'package:medicalinfo2/pages/OnBoarding6.dart';
-import 'package:medicalinfo2/pages/onBoarding4.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class StarterOnBoarding extends StatefulWidget {
