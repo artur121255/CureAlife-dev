@@ -7,6 +7,7 @@ import 'package:medicalinfo2/pages/OnBoarding12.dart';
 import 'package:medicalinfo2/pages/OnBoarding13.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
+import 'package:medicalinfo2/pages/starterOnBoarding2.dart';
 import 'package:medicalinfo2/screens/register.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,11 +46,12 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute:  initScreen==0||initScreen==null? 'onBoarding' :'register',
+      initialRoute:  initScreen==0||initScreen==null? 'OnBoardingStarter' :'register',
       routes: {
         'signIn' :(context) => SignInScreen(),
         'onBoarding': (context) => Starter(),
         'register' : (context)=> Register(),
+        'OnBoardingStarter' :(context) => StarterOnBoarding(),
       },
 
 

@@ -7,14 +7,14 @@ import 'package:medicalinfo2/pages/OnBoarding6.dart';
 import 'package:medicalinfo2/pages/onBoarding4.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Starter extends StatefulWidget {
-  const Starter({Key? key}) : super(key: key);
+class StarterOnBoarding extends StatefulWidget {
+  const StarterOnBoarding({Key? key}) : super(key: key);
 
   @override
   StarterState createState() => StarterState();
 }
 
-class StarterState extends State<Starter> {
+class StarterState extends State<StarterOnBoarding> {
   final _controller = PageController();
 
   // final medicalInfo = [];
@@ -30,6 +30,9 @@ class StarterState extends State<Starter> {
     if (currentPage < 5) {
       _controller.animateToPage(currentPage + 1,
           duration: const Duration(milliseconds: 250), curve: Curves.easeInOut);
+    }
+    if(currentPage==5){
+      Navigator()
     }
   }
 
