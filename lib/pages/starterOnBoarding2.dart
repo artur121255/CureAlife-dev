@@ -62,7 +62,7 @@ class StarterOnBoardingState extends State<StarterOnBoarding> {
             // physics: const AlwaysScrollableScrollPhysics(),
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.8,
+                height: MediaQuery.of(context).size.height * 0.9,
                 child: PageView(
                   controller: _controller,
                   children: <Widget>[
@@ -83,7 +83,6 @@ class StarterOnBoardingState extends State<StarterOnBoarding> {
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: 30,
-                        padding: EdgeInsets.all(20),
                         alignment: Alignment.center,
 
                         // alignment: Alignment.center,
