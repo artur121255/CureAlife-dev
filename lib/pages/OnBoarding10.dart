@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/pages/OnBoarding11.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class OnBoarding10 extends StatefulWidget {
   const OnBoarding10({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class _OnBoarding10State extends State<OnBoarding10> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              child: Text('How active are you? '),
+              child: Text(style: GoogleFonts.montserrat(fontSize: 20),'How active are you? ' ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

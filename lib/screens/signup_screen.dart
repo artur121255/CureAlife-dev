@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicalinfo2/pages/Starter.dart';
 import 'package:medicalinfo2/reusable_widgets/reusable_widget.dart';
 import 'package:medicalinfo2/screens/home_screen.dart';
+import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:medicalinfo2/utils/color_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -19,10 +20,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void userCheck() async {
     try {
-      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
           email: _emailTextController.text,
-          password: _passwordTextController.text
-      );
+          password: _passwordTextController.text);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
@@ -32,6 +33,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } catch (e) {
       print(e);
     }
+//  Navigator.of(context).push(
+//       MaterialPageRoute(
+//           builder: (context) => const SignInScreen(),
+//}
+
+    bool isSignIn = false;
+
   }
 
   @override
@@ -59,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          height:MediaQuery.of(context).size.height*0.3,
+                          height: MediaQuery.of(context).size.height * 0.3,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -76,7 +84,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                               ),
                               Container(
-                                height: MediaQuery.of(context).size.height*0.4,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.4,
                                 child: Stack(
                                   children: [
                                     Positioned(
@@ -128,7 +137,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           //   print("Error ${error.toString()}");
                           // });
                           userCheck();
-
                         })
                       ],
                     ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 import '../utils/diagnoseTreetment.dart';
 
@@ -42,9 +44,11 @@ class _OnBoarding9State extends State<OnBoarding9>  with TickerProviderStateMixi
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Container(
+              margin: EdgeInsets.only(bottom: 40),
               child: Center(
                   child: Text(
-                      style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(fontSize: 20),
                       'Have you been diagnosed with or received treatment for diabetes?')),
             ),
             Stack(

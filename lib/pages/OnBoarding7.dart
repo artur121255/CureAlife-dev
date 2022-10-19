@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:medicalinfo2/screens/groceries.dart';
+import 'package:medicalinfo2/screens/mealPlan.dart';
+import 'package:medicalinfo2/screens/education.dart';
+import 'package:medicalinfo2/screens/reciesPage.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 import '../utils/goals.dart';
 import './OnBoarding8.dart';
@@ -8,35 +14,46 @@ class OnBoarding7 extends StatefulWidget {
   State<OnBoarding7> createState() => OnBoarding7State();
 }
 
-class OnBoarding7State extends State<OnBoarding7>
-    with TickerProviderStateMixin {
-  var selectedGoals = [];
 
-  void ContainerClicked(Goals selectedGoal) {
-    color:
-    Colors.orangeAccent;
-    print("Click event on Container");
-    print("before:");
-    print(selectedGoals);
 
-    setState(() {
-      if (selectedGoals.contains(selectedGoal)) {
-        selectedGoals.remove(selectedGoal);
-      } else {
-        selectedGoals.add(selectedGoal);
-      }
-      print("after:");
+class OnBoarding7State extends State<OnBoarding7> with TickerProviderStateMixin {
+  int selectedIndex = 0; //New
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     selectedIndex = index;
+  //   });
+
+
+    var selectedGoals = [];
+
+    void ContainerClicked(Goals selectedGoal) {
+      color:
+      Colors.orangeAccent;
+      print("Click event on Container");
+      print("before:");
       print(selectedGoals);
-    });
-  }
 
-  Color _getColorForGoal(Goals selectedGoal) {
-    if (selectedGoals.contains(selectedGoal)) {
-      return Colors.orange;
-    } else {
-      return Colors.white;
+      setState(() {
+        if (selectedGoals.contains(selectedGoal)) {
+          selectedGoals.remove(selectedGoal);
+        } else {
+          selectedGoals.add(selectedGoal);
+        }
+        print("after:");
+        print(selectedGoals);
+      });
     }
-  }
+
+    Color _getColorForGoal(Goals selectedGoal) {
+      if (selectedGoals.contains(selectedGoal)) {
+        return Colors.orange;
+      } else {
+        return Colors.white;
+      }
+    }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,17 +62,16 @@ class OnBoarding7State extends State<OnBoarding7>
         child: SingleChildScrollView(
           child: Column(children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 10.0),
+              padding: EdgeInsets.only(top: 20.0),
               child: Container(
-                color: Colors.white,
                 height: 50,
                 child: Column(
                   children: [
                     Text(
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                             fontSize: 20, fontWeight: FontWeight.bold),
                         'What are your goals?'),
-                    Text('Select which apply to you')
+                    Text( style: GoogleFonts.montserrat(),'Select which apply to you')
                   ],
                 ),
               ),
@@ -264,33 +280,6 @@ class OnBoarding7State extends State<OnBoarding7>
             ),
           ]),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-
-        currentIndex: 2,
-          type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.food_bank),
-            label: 'Recipes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Grocery List',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Education',
-          ),
-
-
-        ],
-        selectedItemColor: Colors.amber[800],
-        onTap: null,
       ),
     );
   }

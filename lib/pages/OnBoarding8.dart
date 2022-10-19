@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import '../utils/risks.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class OnBoarding8 extends StatefulWidget {
   const OnBoarding8({Key? key}) : super(key: key);
@@ -50,10 +52,12 @@ class _OnBoarding8State extends State<OnBoarding8>
                   child: Column(
                     children: [
                       Text(
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w700),
+                        textAlign: TextAlign.center,
+                          style: GoogleFonts.montserrat(
+                              fontSize: 20, fontWeight: FontWeight.w700),
                           'Are you at risk of any of the following?'),
-                      Text('Select which apply to you')
+                      SizedBox(height: 10,),
+                      Text(style: GoogleFonts.montserrat(),'Select which apply to you')
                     ],
                   ),
                 ),

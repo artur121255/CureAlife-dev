@@ -23,7 +23,7 @@ class Register extends StatelessWidget {
     InkWell(
     onTap: () => Navigator.of(context).push(
     MaterialPageRoute(
-    builder: (context) => const SignInScreen()),
+    builder: (context) => const SignUpScreen()),
     ),
     child: Container(
       width: 300,

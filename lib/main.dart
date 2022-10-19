@@ -8,6 +8,7 @@ import 'package:medicalinfo2/pages/OnBoarding13.dart';
 import 'package:medicalinfo2/pages/OnBoarding9.dart';
 import 'package:medicalinfo2/pages/OnBoarding8.dart';
 import 'package:medicalinfo2/pages/starterOnBoarding2.dart';
+import 'package:medicalinfo2/screens/home_screen.dart';
 import 'package:medicalinfo2/screens/register.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,6 +17,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart' ;
 import 'package:flutter/services.dart';
+
 
 var initScreen;
 
@@ -46,12 +48,13 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute:  initScreen==0||initScreen==null? 'OnBoardingStarter' :'register',
+      initialRoute:  initScreen==0||initScreen==null? 'OnBoardingStarter' :'signIn',
       routes: {
         'signIn' :(context) => SignInScreen(),
         'onBoarding': (context) => Starter(),
         'register' : (context)=> Register(),
         'OnBoardingStarter' :(context) => StarterOnBoarding(),
+        'HomePage':(context)=> HomeScreen()
       },
 
 

@@ -22,18 +22,18 @@ class _ResetPasswordState extends State<ResetPassword> {
         elevation: 0,
         title: const Text(
           "Reset Password",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.black),
         ),
       ),
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            hexStringToColor("CB2B93"),
-            hexStringToColor("9546C4"),
-            hexStringToColor("5E61F4")
-          ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(colors: [
+          //   hexStringToColor("CB2B93"),
+          //   hexStringToColor("9546C4"),
+          //   hexStringToColor("5E61F4")
+          // ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
               child: Padding(
             padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
