@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/pages/OnBoarding2.dart';
 import 'package:medicalinfo2/pages/OnBoarding3.dart';
+import 'package:medicalinfo2/pages/OnBoarding7.dart';
 import 'package:medicalinfo2/pages/onBoarding4.dart';
 import 'package:medicalinfo2/pages/OnBoarding5.dart';
 import 'package:medicalinfo2/pages/OnBoarding6.dart';
@@ -31,7 +32,9 @@ class StarterState extends State<StarterOnBoarding> {
           duration: const Duration(milliseconds: 250), curve: Curves.easeInOut);
     }
     if(currentPage==5){
-      Navigator()
+      Navigator.push(context,
+                MaterialPageRoute(builder: (context) => OnBoarding7()));
+          
     }
   }
 
