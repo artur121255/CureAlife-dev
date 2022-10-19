@@ -99,6 +99,11 @@ flutter:
     - assets/onBoarding4Img.png
     - assets/onBoarding5Img.png
     - assets/onBoarding6Img.png
+    - assets/Chapter_1/
+    - assets/Chapter_2/
+    - assets/Chapter_3/
+    - assets/frame_2/
+
 
 
 
