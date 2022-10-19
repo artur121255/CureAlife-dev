@@ -125,7 +125,7 @@ class _GroceriesState extends State<Groceries> {
                           color: Colors.deepOrange[300],
                           child: Row(
                             children: <Widget>[
-                              Image.asset('assets/dairy.png'),
+                              Image.asset('assets/Groceries/dairy.png'),
                               Text(
                                 'Dairy',
                                 style: TextStyle(color: Colors.white),
@@ -239,7 +239,7 @@ class _GroceriesState extends State<Groceries> {
                         color: Colors.deepOrange[300],
                         child: Row(
                           children: <Widget>[
-                            Image.asset('assets/meat.png'),
+                            Image.asset('assets/Groceries/meat.png'),
                             Text(
                               'Meat',
                               style: TextStyle(color: Colors.white),
@@ -354,7 +354,7 @@ class _GroceriesState extends State<Groceries> {
                         color: Colors.deepOrange[300],
                         child: Row(
                           children: <Widget>[
-                            Image.asset('assets/Fruit.png'),
+                            Image.asset('assets/Groceries/Fruit.png'),
                             Text(
                               'Fruit',
                               style: TextStyle(color: Colors.white),
@@ -472,7 +472,7 @@ class _GroceriesState extends State<Groceries> {
                             Padding(
                               padding: const EdgeInsets.all(5.0),
                             ),
-                            Image.asset('assets/vegetables.png'),
+                            Image.asset('assets/Groceries/vegetables.png'),
                             Text(
                               'vegetables',
                               style: TextStyle(color: Colors.white),
