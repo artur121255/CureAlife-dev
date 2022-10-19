@@ -11,7 +11,11 @@ import 'package:medicalinfo2/screens/register.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './pages/Starter.dart';
-import './pages/Starter.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:open_file/open_file.dart';
+import 'package:syncfusion_flutter_xlsio/xlsio.dart' ;
+import 'package:flutter/services.dart';
+
 var initScreen;
 
 Future<void> main() async {
@@ -21,8 +25,8 @@ Future<void> main() async {
   await preferences.setInt('initScreen', 1);
   await Firebase.initializeApp();
   runApp(MyApp());
-  
 }
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -48,6 +52,12 @@ class _MyAppState extends State<MyApp> {
         'register' : (context)=> Register(),
       },
 
+
+
+
+
+
     );
+
   }
 }

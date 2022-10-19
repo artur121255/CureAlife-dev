@@ -9,7 +9,7 @@ class OnBoarding1 extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            child: Image.asset(name),
+            child: Image.asset('name'),
           )
         ],
       ),

@@ -30,6 +30,7 @@ class OnBoarding7State extends State<OnBoarding7>
       print("after:");
       print(selectedGoals);
     });
+
   }
 
   Color _getColorForGoal(Goals selectedGoal){
