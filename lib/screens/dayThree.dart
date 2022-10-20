@@ -12,21 +12,25 @@ class dayThree extends StatefulWidget {
   @override
   _dayThreeState createState() => _dayThreeState();
 }
+
 class _dayThreeState extends State<dayThree> {
   //==========================================
 
   late Future<ListResult>futureFliles;
+
   //============================================================
   @override
-  void initState(){
-    super.initState();
-    futureFliles=FirebaseStorage.instance.ref('/images').listAll();
-    _streamProducts = _products.snapshots();
 
+
+  void initState() {
+    super.initState();
+    futureFliles = FirebaseStorage.instance.ref('/images').listAll();
+    _streamProducts = _products.snapshots();
   }
+
 //=============================================================
   final CollectionReference _products = FirebaseFirestore.instance.collection(
-      'mealPlan_day2');
+      'mealPlan_day3');
   late Stream <QuerySnapshot>_streamProducts;
 
   // @override
@@ -51,11 +55,11 @@ class _dayThreeState extends State<dayThree> {
 
           if (snapshot.connectionState == ConnectionState.active) {
             QuerySnapshot querySnapshot = snapshot.data;
-            num calTotal=0;
-            var carbsTotal=0.0;
-            var fatTotal=0.0;
-            var fibreTotal=0.0;
-            var proteinTotal=0.0;
+            num calTotal = 0;
+            var carbsTotal = 0.0;
+            var fatTotal = 0.0;
+            var fibreTotal = 0.0;
+            var proteinTotal = 0.0;
 
 
             querySnapshot!.docs.forEach((doc) {
@@ -64,18 +68,15 @@ class _dayThreeState extends State<dayThree> {
               fatTotal = fatTotal + doc["Fat"];
               fibreTotal = fibreTotal + doc["Fibre"];
               proteinTotal = proteinTotal + doc["Protein"];
-
-
             });
-            var totCarbs=double.parse(carbsTotal.toStringAsFixed(2));
-            var totFat=double.parse(fatTotal.toStringAsFixed(2));
-            var totFibre=double.parse(fibreTotal.toStringAsFixed(2));
-            var totProtein=double.parse(proteinTotal.toStringAsFixed(2));
+            var totCarbs = double.parse(carbsTotal.toStringAsFixed(2));
+            var totFat = double.parse(fatTotal.toStringAsFixed(2));
+            var totFibre = double.parse(fibreTotal.toStringAsFixed(2));
+            var totProtein = double.parse(proteinTotal.toStringAsFixed(2));
 
 
-
-
-            List<QueryDocumentSnapshot>listQueryDocumentSnapshot=querySnapshot.docs;
+            List<QueryDocumentSnapshot>listQueryDocumentSnapshot = querySnapshot
+                .docs;
 
 //============================
 //===========================================================
@@ -87,7 +88,6 @@ class _dayThreeState extends State<dayThree> {
             // totProtein=double.parse(totProtein.toStringAsFixed(2));
             // var totFibre=document['Fibre']+document['Fibre2'];
             // totFibre=double.parse(totFibre.toStringAsFixed(2));
-
 
 
 //============================
@@ -102,12 +102,13 @@ class _dayThreeState extends State<dayThree> {
             List<double> allValueList = dataMap.values.toList();
 
 
-
 //=============================
             return ListView.builder(
-              itemCount: listQueryDocumentSnapshot==null?1:listQueryDocumentSnapshot.length+1,
-              itemBuilder:(context,index){
-                if(index==0){
+              itemCount: listQueryDocumentSnapshot == null
+                  ? 1
+                  : listQueryDocumentSnapshot.length + 1,
+              itemBuilder: (context, index) {
+                if (index == 0) {
                   return Column(
                       children: [
                         const SizedBox(height: 40),
@@ -116,24 +117,26 @@ class _dayThreeState extends State<dayThree> {
 
 
                           child: Column(
-                          children: [
-                          Text(
-                              style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500),
-                            'Meal Plan '
-                        ),
+                            children: [
+                              Text(
+                                  style: TextStyle(
+                                      color: Colors.black54,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500),
+                                  'Meal Plan '
+                              ),
 
-                        const SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
 
                                 children: [
-                                  TextButton(onPressed: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => dayTwo()),
-                                  ),
+                                  TextButton(onPressed: () =>
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => dayTwo()),
+                                      ),
                                       child: Icon(Icons.arrow_back_ios)),
 
                                   Text(
@@ -219,7 +222,7 @@ class _dayThreeState extends State<dayThree> {
                                 ]
                             ),
 
-                            const SizedBox(width: 65),
+                            const SizedBox(width: 30),
 
                             Column(
 
@@ -227,22 +230,23 @@ class _dayThreeState extends State<dayThree> {
                                 const SizedBox(height: 40),
 
                                 Stack(
-                                  children:<Widget>[
+                                  children: <Widget>[
 
                                     PieChart(
 
                                       dataMap: dataMap,
-                                      animationDuration: Duration(milliseconds: 800),
+                                      animationDuration: Duration(
+                                          milliseconds: 800),
                                       // chartLegendSpacing: 32,
                                       //chartRadius: MediaQuery.of(context).size.width / 3.2,
                                       chartRadius: 170,
-                                   //   colorList: colorList,
+                                      //   colorList: colorList,
                                       initialAngleInDegree: 0,
                                       chartType: ChartType.ring,
                                       ringStrokeWidth: 10.18,
 
                                       centerText: ("${calTotal}\n"),
-                                      centerTextStyle:TextStyle(
+                                      centerTextStyle: TextStyle(
                                         fontSize: 30,
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FontStyle.normal,
@@ -280,13 +284,16 @@ class _dayThreeState extends State<dayThree> {
                                         Text(
                                             style: TextStyle(
 
-                                              color:Color.fromRGBO(0, 0, 0, 0.5),
+                                              color: Color.fromRGBO(
+                                                  0, 0, 0, 0.5),
                                               fontFamily: 'Montserrat',
                                               fontStyle: FontStyle.normal,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w300,
-                                              decoration: TextDecoration.underline,
-                                              decorationColor: Color(0xffE09167),
+                                              decoration: TextDecoration
+                                                  .underline,
+                                              decorationColor: Color(
+                                                  0xffE09167),
 
                                             ),
                                             'Calories'
@@ -313,7 +320,7 @@ class _dayThreeState extends State<dayThree> {
 
                 index -= 1;
 
-                QueryDocumentSnapshot document=listQueryDocumentSnapshot[index];
+                QueryDocumentSnapshot document = listQueryDocumentSnapshot[index];
 
                 Center(
 
@@ -355,8 +362,8 @@ class _dayThreeState extends State<dayThree> {
 
 //===================================================
                         Card(
-                          margin:const EdgeInsets.all(10),
-                          child:Column(
+                          margin: const EdgeInsets.all(10),
+                          child: Column(
                             children: [
 
                               Container(
@@ -376,14 +383,16 @@ class _dayThreeState extends State<dayThree> {
                                       ),
                                     ],
                                   ),
-                                  margin: EdgeInsets.only(top: 20, right: 190,bottom: 150),
+                                  margin: EdgeInsets.only(
+                                      top: 20, right: 190, bottom: 150),
 
                                   decoration: new BoxDecoration(
 
                                     color: Colors.white,
 
-                                    image : new DecorationImage(
-                                      image: new ExactAssetImage('assets/Rectangle.png'),
+                                    image: new DecorationImage(
+                                      image: new ExactAssetImage(
+                                          'assets/Rectangle.png'),
                                       fit: BoxFit.scaleDown,
                                     ),
                                     borderRadius: BorderRadius.only(
@@ -397,11 +406,12 @@ class _dayThreeState extends State<dayThree> {
                                 ),
                                 decoration: new BoxDecoration(
                                   color: Colors.purple,
-                                  image : new DecorationImage(
+                                  image: new DecorationImage(
                                     image: NetworkImage(document['image']),
                                     fit: BoxFit.cover,
                                   ),
-                                  border: Border.all(color: Colors.black12, width: 1),
+                                  border: Border.all(
+                                      color: Colors.black12, width: 1),
 
                                 ),
 
@@ -419,7 +429,7 @@ class _dayThreeState extends State<dayThree> {
 
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 14,
@@ -440,10 +450,10 @@ class _dayThreeState extends State<dayThree> {
                                   // Text(
                                   //     '300 kcal'
                                   // ),
-                                  Text((document['Cal'].toString()+'  kcal'),
+                                  Text((document['Cal'].toString() + '  kcal'),
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 13,
@@ -456,10 +466,10 @@ class _dayThreeState extends State<dayThree> {
                                   // Text(
                                   //     '15 min'
                                   // ),
-                                  Text((document['time'].toString()+'  min'),
+                                  Text((document['time'].toString() + '  min'),
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 13,
@@ -477,10 +487,12 @@ class _dayThreeState extends State<dayThree> {
 
                                 children: [
                                   SizedBox(width: 45),
-                                  Text('Carbs:  '+document['Carbs'].toString()+'g',
+                                  Text(
+                                    'Carbs:  ' + document['Carbs'].toString() +
+                                        'g',
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 13,
@@ -489,10 +501,12 @@ class _dayThreeState extends State<dayThree> {
                                     ),
                                   ),
                                   SizedBox(width: 5),
-                                  Text('Fibre:  '+document['Fibre'].toString()+'g',
+                                  Text(
+                                    'Fibre:  ' + document['Fibre'].toString() +
+                                        'g',
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 13,
@@ -501,10 +515,11 @@ class _dayThreeState extends State<dayThree> {
                                     ),
                                   ),
                                   SizedBox(width: 5),
-                                  Text(('Protein:  '+document['Protein'].toString()+'g'),
+                                  Text(('Protein:  ' +
+                                      document['Protein'].toString() + 'g'),
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 13,
@@ -513,10 +528,11 @@ class _dayThreeState extends State<dayThree> {
                                     ),
                                   ),
                                   SizedBox(width: 5),
-                                  Text('Fat:  '+document['Fat'].toString()+'g',
+                                  Text(
+                                    'Fat:  ' + document['Fat'].toString() + 'g',
                                     style: TextStyle(
 
-                                      color:Color.fromRGBO(0, 0, 0, 0.5),
+                                      color: Color.fromRGBO(0, 0, 0, 0.5),
                                       fontFamily: 'Montserrat',
                                       fontStyle: FontStyle.normal,
                                       fontSize: 13,
@@ -535,7 +551,6 @@ class _dayThreeState extends State<dayThree> {
                           ),
 
                         ),
-
 
 
 //============================================================

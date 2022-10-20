@@ -1,8 +1,9 @@
 //import 'auth/firebase_auth.dart';
-import 'package:medicalinfo2/screens/dayOne.dart';
+// import 'package:medicalinfo2//screens/dayOne.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:medicalinfo2/screens/dayOne.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 import '../main.dart';
@@ -120,15 +121,15 @@ class _dayTwoState extends State<dayTwo> {
 
                             children: [
 
-                          Text(
-                              style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500),
-                            'Meal Plan '
-                        ),
+                              Text(
+                                  style: TextStyle(
+                                      color: Colors.black54,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500),
+                                  'Meal Plan '
+                              ),
 
-                        const SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
 
@@ -227,7 +228,7 @@ class _dayTwoState extends State<dayTwo> {
                                 ]
                             ),
 
-                            const SizedBox(width: 65),
+                            const SizedBox(width: 30),
 
                             Column(
 
