@@ -33,6 +33,8 @@ Future<void> main() async {
   initScreen = await preferences.getInt('initScreen');
   await preferences.setInt('initScreen', 1);
   await Firebase.initializeApp();
+
+
   runApp(MyApp());
 }
 
@@ -62,7 +64,6 @@ class _MyAppState extends State<MyApp> {
         'OnBoardingStarter' :(context) => StarterOnBoarding(),
         'HomePage':(context)=> HomeScreen()
       },
-
 
 
 

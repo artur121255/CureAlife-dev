@@ -17,8 +17,7 @@ class _OnBoarding9State extends State<OnBoarding9>  with TickerProviderStateMixi
   void ContainerClicked(diagnosed selectedDiagnose) {
     color:
     Colors.orangeAccent;
-    print("Click event on Container");
-    print(diagnoseTreetment);
+
 
     setState(() {
       if (diagnoseTreetment.contains(selectedDiagnose)) {
@@ -27,6 +26,8 @@ class _OnBoarding9State extends State<OnBoarding9>  with TickerProviderStateMixi
         diagnoseTreetment.add(selectedDiagnose);
       }
     });
+    print("Click event on Container");
+    print(diagnoseTreetment);
   }
 
   changeColorForDiagnose(diagnosed ) {

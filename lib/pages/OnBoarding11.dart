@@ -16,8 +16,7 @@ class _OnBoarding11State extends State<OnBoarding11>
   void ContainerClicked(Gender selecteGender) {
     color:
     Colors.orangeAccent;
-    print("Click event on Container");
-    print(selectedGender);
+
 
     setState(() {
       if (selectedGender.contains(selecteGender)) {
@@ -26,6 +25,8 @@ class _OnBoarding11State extends State<OnBoarding11>
         selectedGender.add(selecteGender);
       }
     });
+    print("Click event on Container");
+    print(selectedGender);
   }
 
   changeColorForDiagnose(selecteGender) {
