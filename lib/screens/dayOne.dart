@@ -121,12 +121,8 @@ class _dayOneState extends State<dayOne> {
                                           fontWeight: FontWeight.w800),
                                       'DAY 1 '
                                   ),
-                                  TextButton(onPressed: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => dayTwo()),
-                                  ),
-                                      child: Icon(Icons.arrow_forward_ios)),
-
+                                  Icon(Icons.arrow_forward_ios),
+                                  
                                 ],
                               ),
                               const SizedBox(height: 20),
