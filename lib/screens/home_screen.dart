@@ -6,6 +6,7 @@ import 'package:medicalinfo2/screens/groceries.dart';
 import 'package:medicalinfo2/screens/profile.dart';
 import 'package:medicalinfo2/screens/reciesPage.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
+import 'StarterMealPlan.dart';
 import 'package:flutter/material.dart';
 
 
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List bottomNavPages = [
     ProfileScreen(),
-    dayOne(),
+    StarterMealPlan(),
     RecipesPage(),
     Groceries(),
     Education(),
