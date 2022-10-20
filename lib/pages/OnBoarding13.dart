@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medicalinfo2/pages/OnBoarding12.dart';
 
 class OnBoarding13 extends StatelessWidget {
   final amountController = TextEditingController();

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medicalinfo2/screens/signin_screen.dart';
 import './OnBoarding10.dart';
 class OnBoarding15 extends StatelessWidget {
   const OnBoarding15({Key? key}) : super(key: key);

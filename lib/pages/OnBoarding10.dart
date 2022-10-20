@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medicalinfo2/pages/OnBoarding11.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 

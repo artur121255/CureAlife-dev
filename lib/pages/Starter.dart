@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medicalinfo2/pages/OnBoarding12.dart';
 import 'package:medicalinfo2/pages/OnBoarding13.dart';
 import 'package:medicalinfo2/pages/OnBoarding10.dart';
 import 'package:medicalinfo2/pages/OnBoarding11.dart';

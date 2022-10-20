@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medicalinfo2/screens/groceries.dart';
-import 'package:medicalinfo2/screens/mealPlan.dart';
-import 'package:medicalinfo2/screens/education.dart';
-import 'package:medicalinfo2/screens/reciesPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 

@@ -1,11 +1,11 @@
-import 'package:cura_artur/screens/dayOne.dart';
+import 'package:medicalinfo2/screens/dayOne.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cura_artur/screens/MealPlan.dart';
-import 'package:cura_artur/screens/education.dart';
-import 'package:cura_artur/screens/groceries.dart';
-import 'package:cura_artur/screens/profile.dart';
-import 'package:cura_artur/screens/reciesPage.dart';
-import 'package:cura_artur/screens/signin_screen.dart';
+import 'package:medicalinfo2/screens/MealPlan.dart';
+import 'package:medicalinfo2/screens/education.dart';
+import 'package:medicalinfo2/screens/groceries.dart';
+import 'package:medicalinfo2/screens/profile.dart';
+import 'package:medicalinfo2/screens/reciesPage.dart';
+import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 
 
