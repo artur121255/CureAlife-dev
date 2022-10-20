@@ -90,7 +90,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                        MaterialPageRoute(builder: (context) => StarterOnBoarding()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
