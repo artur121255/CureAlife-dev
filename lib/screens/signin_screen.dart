@@ -7,9 +7,15 @@ import 'package:medicalinfo2/screens/home_screen.dart';
 import 'package:medicalinfo2/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalinfo2/utils/color_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  // const SignInScreen({Key? key}) : super(key: key);
 
   @override
   _SignInScreenState createState() => _SignInScreenState();
@@ -18,6 +24,21 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
+  // String _username = "";
+  // void initState() {
+  //   super.initState();
+  //   _loadUserInfo();
+  // }
+  // _loadUserInfo() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   _username = (prefs.getString('username') ?? "");
+  //   if (_username == "") {
+  //     Navigator.pushNamedAndRemoveUntil(
+  //         context, 'signIn', ModalRoute.withName('signIn'));
+  //   } else {
+  //     Navigator.pushNamedAndRemoveUntil(
+  //         context, 'HomePage', ModalRoute.withName('HomePage'));
+  //   }
 
   @override
   Widget build(BuildContext context) {

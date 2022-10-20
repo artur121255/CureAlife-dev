@@ -18,8 +18,7 @@ class _OnBoarding8State extends State<OnBoarding8>
   void ContainerClicked(Risks selectedRisk) {
     color:
     Colors.orangeAccent;
-    print("Click event on Container");
-    print(selectedRisks);
+
 
     setState(() {
       if (selectedRisks.contains(selectedRisk)) {
@@ -28,6 +27,8 @@ class _OnBoarding8State extends State<OnBoarding8>
         selectedRisks.add(selectedRisk);
       }
     });
+    print("Click event on Container");
+    print(selectedRisks);
   }
 
   changeColorForRisk(Risks selectedRisk) {

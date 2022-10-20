@@ -24,6 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           .createUserWithEmailAndPassword(
           email: _emailTextController.text,
           password: _passwordTextController.text);
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
@@ -33,12 +34,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } catch (e) {
       print(e);
     }
+
+
 //  Navigator.of(context).push(
 //       MaterialPageRoute(
 //           builder: (context) => const SignInScreen(),
 //}
-
-    bool isSignIn = false;
 
   }
 
@@ -112,7 +113,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        reusableTextField("Enter Email Id",
+                        reusableTextField("Enter Email",
                             Icons.person_outline, false, _emailTextController),
                         const SizedBox(
                           height: 20,

@@ -30,8 +30,7 @@ class OnBoarding7State extends State<OnBoarding7> with TickerProviderStateMixin 
       color:
       Colors.orangeAccent;
       print("Click event on Container");
-      print("before:");
-      print(selectedGoals);
+
 
       setState(() {
         if (selectedGoals.contains(selectedGoal)) {
