@@ -17,6 +17,7 @@ class StarterOnBoarding extends StatefulWidget {
 
 class StarterOnBoardingState extends State<StarterOnBoarding> {
   final _controller = PageController();
+  int pageChanged = 0;
 
   // final medicalInfo = [];
   // StarterState( this.medicalInfo);
@@ -52,10 +53,21 @@ class StarterOnBoardingState extends State<StarterOnBoarding> {
   //
   // }
 
+     getColor(){
+      // var currentPage = _controller.page?.floor();
+        if(pageChanged == 0) return Color(0xff4B643D);
+        else if (pageChanged == 1) return Color(0xffEB9183);
+        else if (pageChanged == 2) return Color(0xff99B182);
+        else if (pageChanged == 3) return Color(0xffE7C851);
+        else if (pageChanged == 4) return Color(0xffE09167);
+    }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Color.fromARGB(255, 168, 157, 156),
+
+  
+        return Scaffold(
+        backgroundColor: getColor(),
         body: Column(
 
             // scrollDirection: Axis.vertical,
@@ -65,6 +77,11 @@ class StarterOnBoardingState extends State<StarterOnBoarding> {
                 height: MediaQuery.of(context).size.height * 0.9,
                 child: PageView(
                   controller: _controller,
+                  onPageChanged: (index){
+                    setState(() {
+                      pageChanged = index;
+                    });
+                  },
                   children: <Widget>[
                     const OnBoarding2(),
                     const OnBoarding3(),
