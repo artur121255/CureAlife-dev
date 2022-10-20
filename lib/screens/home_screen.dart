@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicalinfo2/screens/MealPlan.dart';
 import 'package:medicalinfo2/screens/education.dart';
 import 'package:medicalinfo2/screens/groceries.dart';
+import 'package:medicalinfo2/screens/profile.dart';
 import 'package:medicalinfo2/screens/reciesPage.dart';
 import 'package:medicalinfo2/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   List bottomNavPages = [
+    ProfileScreen(),
     MealPlan(),
     RecipesPage(),
     Groceries(),
@@ -60,6 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.receipt),
             label: 'MealPlan',
           ),
           BottomNavigationBarItem(
