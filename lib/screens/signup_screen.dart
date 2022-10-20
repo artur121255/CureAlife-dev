@@ -19,11 +19,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _userNameTextController = TextEditingController();
 
   void userCheck() async {
+
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
           email: _emailTextController.text,
           password: _passwordTextController.text);
+
+
 
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
